@@ -1,48 +1,45 @@
-// ─────────────────────────────────────────────
-//  بيانات الدعوة — عدّل كل شي من هون
-// ─────────────────────────────────────────────
-
 export const WEDDING = {
-  // الأسماء
-  groomName: "مصطفى",
-  brideName: "سناء",
-  groomInitial: "M",
-  brideInitial: "S",
+  groomName: "يزن",
+  brideName: "منى",
+  groomInitial: "Y",
+  brideInitial: "M",
+  groomFullName: "يزن أمجد إبراهيم عرار",
+  groomKunya: "أبو محمد",
+  brideFullName: "منى مازن ديب سلامة",
+  brideFamily: "أبناء المرحوم ماهر سلامة",
 
-  // التاريخ والوقت — عدّل التاريخ هون (سنة، شهر-1، يوم، ساعة، دقيقة)
-  // ملاحظة: الشهر يبدأ من 0 (يعني 7 = آب/أغسطس)
-  weddingDate: new Date(2026, 8, 6, 20, 0, 0),
-  dateLabel: "الأحد ٦/٩/٢٠٢٦",
-  timeLabel: "من ٨:٠٠ حتى ١٠:٠٠ مساءً",
+  weddingDate: new Date(2026, 9, 9, 19, 0, 0),
+  dateLabel: "الجمعة 09.10.2026",
+  timeLabel: "7:00-10:00 pm",
 
-  // المكان
-  city: "نابلس",
-  venue: "حياة نابلس القديمة",
-  // حط رابط Google Maps الحقيقي للصالة هون
-  venueMapUrl: "https://maps.google.com/?q=%D8%AD%D9%8A%D8%A7%D8%A9+%D9%86%D8%A7%D8%A8%D9%84%D8%B3+%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9",
-  // رابط التضمين (embed) — اختياري، بيظهر خريطة جوا الصفحة
+  city: "عناتا",
+  venue: "قلعة الشام",
+  venueSubtitle: "الكائنة في عناتا",
+  venueMapUrl: "https://maps.google.com/?q=%D9%82%D9%84%D8%B9%D8%A9+%D8%A7%D9%84%D8%B4%D8%A7%D9%85+%D8%B9%D9%86%D8%A7%D8%AA%D8%A7",
   venueMapEmbedUrl:
-    "https://www.google.com/maps?q=%D8%AD%D9%8A%D8%A7%D8%A9+%D9%86%D8%A7%D8%A8%D9%84%D8%B3+%D8%A7%D9%84%D9%82%D8%AF%D9%8A%D9%85%D8%A9&output=embed",
+    "https://www.google.com/maps?q=%D9%82%D9%84%D8%B9%D8%A9+%D8%A7%D9%84%D8%B4%D8%A7%D9%85+%D8%B9%D9%86%D8%A7%D8%AA%D8%A7&output=embed",
 
-  // صور المعرض — حط صورك بمجلد public/gallery وعدّل الأسماء هون
   galleryImages: [
     "/gallery/photo-1.jpg",
     "/gallery/photo-2.jpg",
   ],
 
-  // برنامج الحفل — عدّل الأوقات والفقرات من هون
   program: [
-    { time: "الخميس ٣/٩", title: "جبل الحنة في منزل والد العريس الكائن في دير الحطب", icon: "welcome" },
-    { time: "الجمعة ٤/٩", title: "الغداء في قاعة المجلس القروي (العلالي) - دير الحطب، من بعد صلاة الظهر حتى الساعة ٣", icon: "dinner" },
-    { time: "الجمعة ٤/٩", title: "الحمام بعد صلاة العصر مباشرة بضيافة السيد زياد الحاج أسعد (أبو سائد)", icon: "rings" },
-    { time: "الأحد ٦/٩", title: "حفل الزفاف في حياة نابلس القديمة من الساعة ٨ حتى ١٠ مساءً", icon: "party" },
-    { time: "مؤمنة", title: "المواصلات مؤمنة", icon: "welcome" },
+    { time: "الجمعة 09.10.2026", title: "حفل الزفاف في قلعة الشام الكائنة في عناتا", icon: "party" },
+    { time: "7:00-10:00 pm", title: "استقبال الضيوف والتهاني", icon: "welcome" },
+    { time: "تنويه", title: "يمنع التصوير في قاعة النساء", icon: "rings" },
   ],
 
-  // نصوص
   invitationLine:
-    "ومن آياته أن خلق لكم من أنفسكم أزواجاً لتسكنوا إليها",
-  heroLine: "يتشرفون بدعوتكم لحضور حفل زفاف مصطفى وسناء",
-  thankYouMessage: "تشريفكم يكتمل به فرحنا، وأهلاً وسهلاً بكم",
+    "سبحان من جمع القلوب بفضله، طاب اللقاء وزاد تشريفكم",
+  invitationVerse:
+    "وعلى رحاب الود عمر دارها، في ليلة قد أشرقت أنوارها",
+  familiesLine: "أفراح آل عرار وآل سلامة",
+  hostLine:
+    "يتشرفون بدعوتكم لحضور حفل زفاف نجلهما وكريمتهم",
+  blessingLine: "وبارك عيشة تعالى",
+  noPhotosLine: "يمنع التصوير في قاعة النساء",
+  heroLine: "تكتمل فرحتنا بحضوركم ومشاركتكم أجمل اللحظات",
+  thankYouMessage: "دامت دياركم عامرة بالأفراح",
   tapToOpenText: "اضغط لفتح الدعوة",
 } as const;

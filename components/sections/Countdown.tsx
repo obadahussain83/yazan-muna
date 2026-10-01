@@ -115,14 +115,18 @@ export default function Countdown() {
 
 // بتلات ورد بتنزل بنعومة من فوق مع تمايل ودوران — قيم ثابتة لتجنب مشاكل الـ hydration
 const PETALS = [
-  { left: "6%", size: 14, duration: 9, delay: 0, sway: 22, color: "#E5A99E" },
-  { left: "18%", size: 10, duration: 12, delay: 2.5, sway: -18, color: "#D98A80" },
-  { left: "30%", size: 12, duration: 10, delay: 5, sway: 16, color: "#C9A227" },
-  { left: "44%", size: 9, duration: 13, delay: 1.2, sway: -24, color: "#E5A99E" },
-  { left: "56%", size: 13, duration: 9.5, delay: 6.5, sway: 20, color: "#EFC3BA" },
-  { left: "68%", size: 10, duration: 11, delay: 3.8, sway: -16, color: "#C9A227" },
-  { left: "80%", size: 12, duration: 10.5, delay: 0.8, sway: 18, color: "#D98A80" },
-  { left: "90%", size: 9, duration: 12.5, delay: 4.6, sway: -20, color: "#EFC3BA" },
+  { left: "3%", size: 10, duration: 12.5, delay: 0, sway: 34, color: "#E5A99E" },
+  { left: "10%", size: 14, duration: 10.8, delay: 1.3, sway: -24, color: "#D98A80" },
+  { left: "17%", size: 8, duration: 13.6, delay: 4.4, sway: 28, color: "#F4D3CB" },
+  { left: "25%", size: 12, duration: 11.9, delay: 2.6, sway: -36, color: "#C9A227" },
+  { left: "33%", size: 9, duration: 14.2, delay: 6.1, sway: 26, color: "#EFC3BA" },
+  { left: "41%", size: 15, duration: 12.8, delay: 0.7, sway: -30, color: "#E5A99E" },
+  { left: "49%", size: 10, duration: 10.6, delay: 3.5, sway: 38, color: "#F4D3CB" },
+  { left: "57%", size: 13, duration: 13.1, delay: 5.4, sway: -22, color: "#D98A80" },
+  { left: "65%", size: 8, duration: 11.4, delay: 1.9, sway: 30, color: "#C9A227" },
+  { left: "73%", size: 14, duration: 14, delay: 4.9, sway: -34, color: "#EFC3BA" },
+  { left: "82%", size: 11, duration: 12.1, delay: 2.2, sway: 24, color: "#F4D3CB" },
+  { left: "91%", size: 13, duration: 13.8, delay: 6.8, sway: -28, color: "#E5A99E" },
 ] as const;
 
 function FallingPetals() {
@@ -133,22 +137,26 @@ function FallingPetals() {
           key={i}
           className="absolute -top-6"
           style={{ left: p.left }}
+          initial={{ y: "-16vh", opacity: 0, rotate: i * 16 }}
           animate={{
-            y: ["0vh", "110vh"],
-            x: [0, p.sway, -p.sway * 0.6, p.sway * 0.8, 0],
-            rotate: [0, 140, 280, 420],
+            y: ["-16vh", "112vh"],
+            x: [0, p.sway * 0.45, -p.sway * 0.25, p.sway, 0],
+            rotate: [i * 16, 95 + i * 8, 210 + i * 10, 330 + i * 7],
+            opacity: [0, 0.62, 0.54, 0.28, 0],
           }}
           transition={{
             duration: p.duration,
             delay: p.delay,
             repeat: Infinity,
             ease: "linear",
+            repeatDelay: 0.2,
           }}
         >
-          <svg width={p.size} height={p.size * 1.4} viewBox="0 0 14 20" style={{ opacity: 0.55 }}>
+          <svg className="drop-shadow-sm" width={p.size} height={p.size * 1.4} viewBox="0 0 14 20">
             <path
               d="M7 0 C12 3 13.5 11 7 19 C0.5 11 2 3 7 0 Z"
               fill={p.color}
+              opacity="0.66"
             />
             <path d="M7 2 C7 8 7 12 7 17" stroke="#fff" strokeWidth="0.7" opacity="0.4" fill="none" />
           </svg>
