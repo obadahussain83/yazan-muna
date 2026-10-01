@@ -36,7 +36,7 @@ export default function Hero() {
           </svg>
           <span className="h-px w-8 bg-gold/60" />
         </div>
-        <div className="grid max-w-[330px] grid-cols-1 gap-1 text-sm font-semibold leading-loose text-gold-dark sm:grid-cols-2">
+        <div className="grid max-w-[390px] grid-cols-1 gap-1 text-[0.84rem] font-semibold leading-loose text-gold-dark">
           <p>{WEDDING.invitationLine}</p>
           <p>{WEDDING.invitationVerse}</p>
         </div>
@@ -66,10 +66,10 @@ export default function Hero() {
       </Reveal>
 
       <Reveal delay={0.42}>
-        <div className="grid w-full max-w-[350px] grid-cols-[1fr_auto_1fr] items-start gap-3">
-          <PersonBlock title="السيد" name={WEDDING.groomFullName} note={`(${WEDDING.groomKunya})`} />
-          <span className="pt-8 font-arabic text-4xl text-gold-dark">&</span>
-          <PersonBlock title={WEDDING.brideFamily} name={WEDDING.brideFullName} />
+        <div className="grid w-full max-w-[390px] grid-cols-[1fr_34px_1fr] items-start gap-3">
+          <PersonBlock title="السيد" name="أمجد إبراهيم عرار" note={`(${WEDDING.groomKunya})`} />
+          <NameKnot />
+          <PersonBlock title="السيد" name="مازن ديب سلامة" note={`(${WEDDING.brideFamily})`} />
         </div>
       </Reveal>
 
@@ -77,11 +77,11 @@ export default function Hero() {
         <p className="mt-7 max-w-[330px] font-arabic text-2xl leading-loose text-ink">
           {WEDDING.hostLine}
         </p>
-        <div className="mt-5 flex items-center justify-center gap-8">
-          <p className="font-arabic text-5xl text-ink">{WEDDING.groomName}</p>
-          <p className="font-arabic text-5xl text-ink">{WEDDING.brideName}</p>
+        <div className="mx-auto mt-1 grid w-full max-w-[260px] grid-cols-2 text-sm font-semibold text-ink/75">
+          <span>نجله</span>
+          <span>كريمتهم</span>
         </div>
-        <p className="mt-5 font-arabic text-2xl text-ink">{WEDDING.blessingLine}</p>
+        <CoupleSignature />
         <div className="mt-4 flex items-end justify-center gap-1 opacity-70">
           <FloralBranch className="w-20" flip />
           <FloralBranch className="w-20" />
@@ -96,9 +96,62 @@ export default function Hero() {
 function PersonBlock({ title, name, note }: { title: string; name: string; note?: string }) {
   return (
     <div className="flex min-w-0 flex-col items-center text-center">
-      <p className="mb-2 min-h-[34px] text-sm font-semibold leading-snug text-gold-dark">{title}</p>
-      <h1 className="text-lg font-bold leading-snug text-ink drop-shadow-sm">{name}</h1>
-      {note ? <p className="mt-1 text-sm text-ink/70">{note}</p> : null}
+      <p className="mb-2 min-h-[32px] text-sm font-bold leading-snug text-gold-dark">{title}</p>
+      <h1 className="text-[1.05rem] font-bold leading-[1.65] text-ink drop-shadow-sm">{name}</h1>
+      {note ? <p className="mt-0.5 text-sm font-medium text-ink/70">{note}</p> : null}
+    </div>
+  );
+}
+
+function NameKnot() {
+  return (
+    <div className="flex h-24 items-center justify-center pt-8 text-gold-dark" aria-hidden>
+      <span className="font-arabic text-2xl font-bold leading-none">و</span>
+    </div>
+  );
+}
+
+function CoupleSignature() {
+  return (
+    <div className="relative mx-auto mt-4 w-full max-w-[360px] px-2 py-2">
+      <svg
+        viewBox="0 0 360 84"
+        className="absolute inset-x-0 top-1 h-[86px] w-full overflow-visible text-gold"
+        fill="none"
+        aria-hidden
+      >
+        <path
+          d="M55 44 C104 24 136 24 169 41 C173 43 176 44 180 44 C184 44 187 43 191 41 C224 24 256 24 305 44"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          opacity="0.55"
+        />
+        <path
+          d="M134 58 C153 72 170 70 180 50 C190 70 207 72 226 58"
+          stroke="currentColor"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          opacity="0.45"
+        />
+        <path
+          d="M180 37 C185 31 194 35 194 43 C194 52 184 58 180 63 C176 58 166 52 166 43 C166 35 175 31 180 37 Z"
+          fill="currentColor"
+          opacity="0.72"
+        />
+      </svg>
+
+      <div className="relative grid grid-cols-[1fr_44px_1fr] items-center">
+        <p className="font-arabic text-[3.55rem] font-bold leading-none text-ink drop-shadow-sm">
+          {WEDDING.groomName}
+        </p>
+        <div className="flex items-center justify-center" aria-hidden>
+          <span className="h-px w-14 bg-gradient-to-r from-transparent via-gold/75 to-transparent" />
+        </div>
+        <p className="font-arabic text-[3.55rem] font-bold leading-none text-ink drop-shadow-sm">
+          {WEDDING.brideName}
+        </p>
+      </div>
     </div>
   );
 }
