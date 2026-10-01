@@ -7,7 +7,9 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   (process.env.VERCEL_PROJECT_PRODUCTION_URL
     ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    : "http://localhost:3000");
+    : "https://yazan-muna-wedding.vercel.app");
+
+const previewImage = "/opengraph-image.png";
 
 const scriptFont = Great_Vibes({
   weight: "400",
@@ -37,11 +39,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ar_AR",
+    url: siteUrl,
+    siteName: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
     title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
     description: `نتشرف بدعوتكم لمشاركتنا فرحتنا يوم ${WEDDING.dateLabel} في ${WEDDING.venue}، ${WEDDING.city}`,
     images: [
       {
-        url: "/og-image.png",
+        url: previewImage,
         width: 1200,
         height: 630,
         alt: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
@@ -52,7 +56,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `دعوة زفاف ${WEDDING.groomName} و${WEDDING.brideName}`,
     description: `نتشرف بدعوتكم لمشاركتنا فرحتنا يوم ${WEDDING.dateLabel}`,
-    images: ["/og-image.png"],
+    images: [previewImage],
   },
 };
 
